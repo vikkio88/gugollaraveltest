@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 use App\Models\Website;
 use App\Models\SearchStats;
+use App\Library\Paginator;
 use Input;
 use Redirect;
 
@@ -8,12 +9,11 @@ class SearchController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Home Controller
+	| Search Controller
 	|--------------------------------------------------------------------------
 	|
-	| This controller renders your application's "dashboard" for users that
-	| are authenticated. Of course, you are free to change or remove the
-	| controller as you wish. It is just here to get your app started!
+	| This controller renders the SearchResult page
+	| after checking all the inputs
 	|
 	*/
 
@@ -28,7 +28,7 @@ class SearchController extends Controller {
 	}
 
 	/**
-	 * Show the application dashboard to the user.
+	 * Show the search result to the user.
 	 *
 	 * @return Response
 	 */
@@ -37,21 +37,29 @@ class SearchController extends Controller {
 		$links = null;
 		$query = Input::get('q');
 		$lucky = Input::get('lucky');
-		$stats = new SearchStats();
 
+		$pageNum = Input::get('p') != "" ? Input::get('p') : 1;
+		$stats = new SearchStats();
 
 		if(!empty($query) && $query != ""){
 			
+			//performing the search and calculating elapsed time
 			$starttime = microtime(true);
 			$links =  Website::getByQueryString($query);
 			$endtime = microtime(true);
 			$timediff = $endtime - $starttime;
 
+			//wrapping info into a class
 			$stats->elapsed = $timediff;
 			$stats->total = count($links);
+			$stats->currentPage = $pageNum;
+			$stats->pages = ceil(count($links)/10);
+			$stats->max = $stats->pages < 11 ? $stats->pages+1 : 11;
+
+			//pagination of results
+			$links = Paginator::page($links,$pageNum);
 
 		} else {
-			//$links =  Website::all();
 			return Redirect::to("/");
 		}
 

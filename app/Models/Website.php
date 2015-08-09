@@ -4,6 +4,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
+/**
+ * Model to manage Row WebSite from the DB
+ *
+ * @var string
+ */
 class Website extends Model {
 	/**
 	 * The database table used by the model.

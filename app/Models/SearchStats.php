@@ -7,6 +7,7 @@ class SearchStats {
 	public $total;
 	public $pages;
 	public $currentPage;
+	public $max;
 
 	// a small fucntion in order to convert microtime in time
 	public function SetElapsedFromMicro($microtime) {

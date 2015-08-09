@@ -6237,59 +6237,61 @@ label,
 /**
   Edited CSS
 **/
-
+/* the home container*/
 #homecontainer {
   margin: auto;
-  padding-top: 12%;
+  padding-top: 11%;
   text-align: center;
 }
-
+/* div for home buttons*/
 .homebuttons {
   padding-top: 10px;
 }
+/* the class to manage button in home*/
 .btnhome{
   margin-right: 10px;
   background-color: rgb(245, 245, 245);
 }
-
+/* the result list*/
 ul#resultset {
   margin-top: 15px;
  list-style: none;
  max-width: 512px;
+ margin-left: 110px;
 }
-
+/* the list element for the result*/
 li.result {
   margin-bottom: 20px;
   font-family: arial, sans-serif;
 }
-
+/* the result title*/
 div.result-title {
   font-size: 18px;
   color: rgb(26, 13, 171);
 }
-
+/* the result subtitle*/
 div.result-subtitle {
   font-size: 14px;
   color:rgb(0, 102, 33);
 }
-
+/* the result description*/
 div.result-body {
   margin-top: 0px;
   font-size: 13px;
 }
 
-
 div.search-row {
   margin-left: 0px;
 }
 
+/* the container div for results*/
 div.container-results{
-  margin-left: 0px;
   text-align: left;
 }
 
+/* the result statistic*/
 div#resultstat {
-  margin-left: 40px;
+  margin-left: 130px;
   margin-top: 15px;
   color: rgb(128, 128, 128);
   display: block;
@@ -6297,6 +6299,7 @@ div#resultstat {
   font-size: 12px;
 }
 
+/* the active google style*/
 li.activegoogle {
   color: rgb(221, 75, 57);
   border-bottom-color: rgb(221, 75, 57);
@@ -6309,6 +6312,122 @@ img.logosmall {
   width:30%;
 }
 
+div.result-error {
+  margin-left: 40px;
+  margin-top: 15px;
+  color: rgb(34, 34, 34);
+  display: block;
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+div.topwrapper {
+  height: 60px;
+  /*width: 750px;*/
+}
+span.logotop {
+  /*float:left;*/
+}
+span.searchbartop {
+  margin-top: 10px;
+  float: left;
+}
+
+.navbarsearch {
+  margin-bottom: 0px;
+}
+.navbarundersearch {
+  background-color: white;
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 85px;
+  background-color: #f5f5f5;
+  color: rgb(119, 119, 119);
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+
+.footerfixed {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 85px;
+  background-color: #f5f5f5;
+  color: rgb(119, 119, 119);
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+
+.navfoot {
+  margin-top: 40px;
+  margin-left: 130px;
+}
+/* generic footer */
+.footer a {
+  color: rgb(119, 119, 119);
+}
+/* fixed footer*/
+.footerfixed a {
+  color: rgb(119, 119, 119);
+}
+
+/* List on pagination*/
+ul.pages {
+  list-style: none;
+  font-size: 13px;
+}
+
+/* List on pagination*/
+ul.pages li {
+color: rgb(26, 13, 171);
+cursor: pointer;
+display: block;
+font-family: arial, sans-serif;
+font-size: 13px;
+display: inline; 
+margin-right: 5px;
+margin-left: 5px;
+}
+
+/* 
+  List on pagination,
+  current page
+*/
+li.current-page {
+  font-weight: bold;
+  color:black;
+}
+
 /**
   End Of Edited CSS
 **/
+
+/**
+ CSS Snippet SearchBar
+ **/
+
+ .add-on .input-group-btn > .btn {
+  border-left-width:0;left:-2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(26, 13, 171, 0.075);*/
+  box-shadow: inset 0 1px 1px rgb(26, 13, 171);
+  /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+}
+/* stop the glowing blue shadow */
+.add-on .form-control:focus {
+ box-shadow:none;
+ -webkit-box-shadow:none;
+  border-color:#cccccc; 
+}
+
+.btnsearch{
+  color: white;
+  background-color: #3369e8;
+}
+.btnsearch:hover{
+  color: white;
+  background-color: #3366cc; 
+}

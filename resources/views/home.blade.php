@@ -8,7 +8,7 @@
 </div>
 	<form action="/search" method="get" id="searchform">
 	    <label for="query"></label>
-	    <input type="query" id="query" name="q" size="66">
+	    <input autocomplete="off" type="query" id="query" name="q" size="66">
 	    <div class="homebuttons">
   			<button type="button" onclick="checkSubmit()" class="btn-sm btn-default btnhome"><strong>Google search</strong></button>
   			<button type="button" onclick="checkSubmit(true)" class="btn-sm btn-default btnhome"><strong>I'm Feeling Lucky</strong></button>
